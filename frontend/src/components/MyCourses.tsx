@@ -7,6 +7,7 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     background-color: whitesmoke;
+    width: 100%;
 `;
 const Title = styled.div`
     font-size: 38px;

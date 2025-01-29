@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import {Account} from "./pages/Account.tsx";
+import {Header} from "./components/Header.tsx";
 
 
 const Container = styled.div`
@@ -14,6 +15,7 @@ function App() {
 
   return (
    <Container>
+       <Header/>
        <Account/>
    </Container>
   )

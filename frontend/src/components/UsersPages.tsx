@@ -71,7 +71,40 @@ const Button = styled.div`
 `;
 
 
-export function UsersPages() {
+export type PropsType = {
+    setProfile: (value: boolean) => void;
+    setMyCourses: (value: boolean) => void;
+    setbookmarks: (value: boolean) => void;
+    setAchiev: (value: boolean) => void;
+}
+
+export function UsersPages(props: PropsType) {
+
+    const profileHandler = () => {
+        props.setMyCourses(false);
+        props.setProfile(true);
+        props.setbookmarks(false);
+        props.setAchiev(false);
+    }
+    const coursesHandler = () => {
+        props.setMyCourses(true);
+        props.setProfile(false);
+        props.setbookmarks(false);
+        props.setAchiev(false);
+    }
+    const bokmarksHandler = () => {
+        props.setMyCourses(false);
+        props.setProfile(false);
+        props.setbookmarks(true);
+        props.setAchiev(false);
+    }
+    const achievHandler = () => {
+        props.setMyCourses(false);
+        props.setProfile(false);
+        props.setbookmarks(false);
+        props.setAchiev(true);
+    }
+
 
     return (
         <Container>
@@ -80,11 +113,18 @@ export function UsersPages() {
                 <UserName>Абрамов Тихон</UserName>
             </UserContainer>
             <ButtonContainer>
-                <Button>Мои курсы</Button>
-                <Button>Предметы</Button>
-                <Button>Закладки</Button>
-                <Button>Примечание</Button>
-                <Button>Избранное</Button>
+                <Button onClick={() => {
+                    profileHandler()
+                }}>Профиль</Button>
+                <Button onClick={() => {
+                    coursesHandler()
+                }}>Мои курсы</Button>
+                <Button onClick={() => {
+                    bokmarksHandler()
+                }}>Закладки</Button>
+                <Button onClick={() => {
+                    achievHandler()
+                }}>Достижения</Button>
             </ButtonContainer>
         </Container>
     )
