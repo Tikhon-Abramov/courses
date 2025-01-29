@@ -14,7 +14,7 @@ function App() {
 
   return (
    <Container>
-       <Account/>1
+       <Account/>
    </Container>
   )
 }
